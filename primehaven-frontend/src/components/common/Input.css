@@ -1,0 +1,113 @@
+.input-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  width: 100%;
+}
+
+.input-label {
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--color-text);
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  letter-spacing: 0.02em;
+}
+
+.required-star {
+  color: var(--color-error);
+}
+
+.input-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+.input-control {
+  width: 100%;
+  padding: 11px 16px;
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  color: var(--color-text);
+  font-family: var(--font-sans);
+  font-size: 0.92rem;
+  transition: border-color var(--transition-fast), box-shadow var(--transition-fast), background-color var(--transition-fast);
+}
+
+.input-control::placeholder {
+  color: #a89c8e;
+}
+
+.input-control:focus {
+  border-color: var(--bronze);
+  outline: none;
+  background-color: #ffffff;
+  box-shadow: 0 0 0 3px rgba(184, 145, 63, 0.18);
+}
+
+.input-control:disabled {
+  background-color: #efe8dc;
+  color: var(--color-text-secondary);
+  cursor: not-allowed;
+}
+
+.input-textarea {
+  resize: vertical;
+  min-height: 90px;
+}
+
+.input-prefix-icon {
+  position: absolute;
+  left: 14px;
+  color: var(--color-text-secondary);
+  pointer-events: none;
+}
+
+.has-prefix {
+  padding-left: 42px;
+}
+
+.has-suffix {
+  padding-right: 44px;
+}
+
+.input-password-toggle {
+  position: absolute;
+  right: 12px;
+  background: none;
+  border: none;
+  color: var(--color-text-secondary);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4px;
+  border-radius: 4px;
+}
+
+.input-password-toggle:hover {
+  color: var(--bronze);
+}
+
+.has-error .input-control {
+  border-color: var(--color-error);
+}
+
+.has-error .input-control:focus {
+  box-shadow: 0 0 0 3px rgba(181, 71, 71, 0.18);
+}
+
+.input-error-msg {
+  font-size: 0.78rem;
+  color: var(--color-error);
+  font-weight: 500;
+}
+
+.input-helper-msg {
+  font-size: 0.76rem;
+  color: var(--color-text-muted);
+}

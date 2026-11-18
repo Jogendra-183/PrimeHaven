@@ -1,0 +1,63 @@
+/* AuthenticationStatus.css */
+.auth-status-banner {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 14px 16px;
+  border-radius: var(--radius-sm);
+  font-size: 0.88rem;
+  line-height: 1.5;
+  margin-bottom: 20px;
+  transition: all var(--transition-normal);
+}
+
+.auth-status-banner.is-auth-error {
+  background-color: var(--color-error-bg);
+  border: 1px solid rgba(181, 71, 71, 0.28);
+  color: var(--color-error);
+}
+
+.auth-status-banner.is-network-error {
+  background-color: #fff8f0;
+  border: 1px solid rgba(184, 145, 63, 0.35);
+  color: #8c5d26;
+}
+
+.status-icon-wrap {
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.status-message-content {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  flex: 1;
+}
+
+.status-text {
+  font-weight: 500;
+}
+
+.status-retry-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  align-self: flex-start;
+  background-color: #ffffff;
+  border: 1px solid rgba(184, 145, 63, 0.4);
+  color: var(--bronze-dk);
+  font-size: 0.78rem;
+  font-weight: 600;
+  padding: 5px 12px;
+  border-radius: var(--radius-xs);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.status-retry-button:hover {
+  background-color: var(--bronze);
+  color: #ffffff;
+  border-color: var(--bronze);
+}
+

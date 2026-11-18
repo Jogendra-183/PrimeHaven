@@ -1,0 +1,221 @@
+/* ==========================================================================
+   PRIMEHAVEN REAL ESTATE NETWORK - LUXURY FOOTER STYLES
+   Obsidian, Charcoal & Champagne Gold
+   ========================================================================== */
+
+.public-footer {
+  background-color: var(--obsidian, #0e0c0a);
+  color: var(--color-text-on-dark, #f7f3eb);
+  margin-top: auto;
+  border-top: 1px solid rgba(184, 145, 63, 0.22);
+  position: relative;
+  z-index: 10;
+}
+
+.public-footer::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent 0%, var(--bronze, #b8913f) 50%, transparent 100%);
+  opacity: 0.6;
+}
+
+.footer-content {
+  padding: 72px 28px 52px;
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1.6fr;
+  gap: 52px;
+}
+
+.footer-brand-col {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.footer-logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  text-decoration: none;
+}
+
+.footer-logo .brand-icon-box {
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  background: linear-gradient(135deg, rgba(184, 145, 63, 0.25), rgba(184, 102, 72, 0.2));
+  border: 1px solid rgba(184, 145, 63, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.footer-logo .brand-home-icon {
+  color: var(--bronze-lt, #c9a96e);
+}
+
+.footer-logo .brand-title {
+  color: #ffffff;
+  font-size: 1.35rem;
+  font-family: var(--font-serif);
+  letter-spacing: -0.01em;
+}
+
+.footer-logo .brand-subtitle {
+  color: var(--bronze-lt, #c9a96e);
+  font-size: 0.68rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.footer-tagline {
+  font-family: var(--font-serif);
+  font-size: 1.12rem;
+  color: var(--bronze-lt, #c9a96e);
+  font-style: italic;
+  margin-top: 2px;
+}
+
+.footer-desc {
+  font-size: 0.9rem;
+  color: rgba(247, 243, 235, 0.68);
+  line-height: 1.7;
+  max-width: 400px;
+}
+
+.footer-heading {
+  font-size: 1.05rem;
+  font-family: var(--font-serif);
+  color: #ffffff;
+  margin-bottom: 22px;
+  letter-spacing: 0.02em;
+  position: relative;
+  display: inline-block;
+}
+
+.footer-heading::after {
+  content: '';
+  position: absolute;
+  bottom: -6px;
+  left: 0;
+  width: 24px;
+  height: 1px;
+  background-color: var(--bronze, #b8913f);
+}
+
+.footer-links {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 13px;
+}
+
+.footer-links a {
+  font-size: 0.9rem;
+  color: rgba(247, 243, 235, 0.72);
+  transition: all var(--transition-fast);
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.footer-links a:hover {
+  color: var(--bronze-lt, #c9a96e);
+  transform: translateX(3px);
+}
+
+.footer-contact-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  font-size: 0.88rem;
+  color: rgba(247, 243, 235, 0.72);
+}
+
+.footer-contact-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  line-height: 1.5;
+}
+
+.contact-icon {
+  color: var(--bronze-lt, #c9a96e);
+  flex-shrink: 0;
+  margin-top: 3px;
+}
+
+.footer-badge-box {
+  margin-top: 22px;
+}
+
+.footer-badge-box .badge {
+  background: rgba(184, 145, 63, 0.12);
+  color: var(--bronze-lt, #c9a96e);
+  border: 1px solid rgba(184, 145, 63, 0.32);
+  padding: 6px 14px;
+  font-size: 0.72rem;
+  letter-spacing: 0.08em;
+}
+
+.footer-bottom {
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+  padding: 24px 0;
+  background-color: rgba(0, 0, 0, 0.25);
+}
+
+.footer-bottom-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 16px;
+  font-size: 0.84rem;
+  color: rgba(247, 243, 235, 0.52);
+}
+
+.footer-legal-links {
+  display: flex;
+  gap: 14px;
+  align-items: center;
+  color: rgba(247, 243, 235, 0.6);
+}
+
+.footer-legal-links span {
+  transition: color var(--transition-fast);
+  cursor: pointer;
+}
+
+.footer-legal-links span:hover {
+  color: var(--bronze-lt, #c9a96e);
+}
+
+@media (max-width: 1024px) {
+  .footer-content {
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    padding: 56px 24px 40px;
+  }
+}
+
+@media (max-width: 640px) {
+  .footer-content {
+    grid-template-columns: 1fr;
+    gap: 36px;
+    padding: 48px 20px 32px;
+  }
+  .footer-bottom-inner {
+    flex-direction: column;
+    text-align: center;
+    gap: 12px;
+  }
+  .footer-legal-links {
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+}

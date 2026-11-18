@@ -1,3 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<session version="1.0">&#x0A;<refactoring comment="Delete resource &apos;EUREKA-SERVER&apos;" deleteContents="true" description="Delete resource &apos;EUREKA-SERVER&apos;" element1="/EUREKA-SERVER" flags="7" id="org.eclipse.ltk.core.refactoring.delete.resources" resources="1" stamp="1789813734780"/>&#x0A;<refactoring comment="Rename resource &apos;auth-service&apos; to &apos;AUTH-SERVICE&apos;" description="Rename resource &apos;auth-service&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="/auth-service" name="AUTH-SERVICE" stamp="1789814801954" updateReferences="true"/>
-</session>

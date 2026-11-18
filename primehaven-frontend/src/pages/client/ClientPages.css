@@ -1,0 +1,465 @@
+/* ==========================================================================
+   PRIMEHAVEN REAL ESTATE NETWORK - CLIENT SUITE STYLES
+   Warm Ivory, Charcoal & Champagne Gold Luxury Aesthetic
+   ========================================================================== */
+
+.client-page-header {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  margin-bottom: 28px;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.page-subtitle {
+  font-size: 1.85rem;
+  color: var(--color-text);
+  letter-spacing: -0.01em;
+}
+
+.page-desc {
+  font-size: 0.95rem;
+  color: var(--color-text-secondary);
+  margin-top: 4px;
+}
+
+/* Welcome Card */
+.client-welcome-card {
+  padding: 40px 36px;
+  background: linear-gradient(135deg, #ffffff 0%, #faf5ee 100%);
+  margin-bottom: 32px;
+  border-radius: var(--radius-xl);
+  border: 1px solid var(--color-border-gold);
+  box-shadow: var(--shadow-sm);
+  position: relative;
+  overflow: hidden;
+}
+
+.client-welcome-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--bronze), var(--bronze-lt));
+}
+
+.welcome-eyebrow {
+  display: inline-block;
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: var(--bronze);
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  margin-bottom: 8px;
+}
+
+.welcome-name {
+  font-size: clamp(2rem, 3.5vw, 2.5rem);
+  color: var(--color-text);
+  margin-bottom: 12px;
+  letter-spacing: -0.015em;
+}
+
+.welcome-desc {
+  font-size: 1.02rem;
+  color: var(--color-text-secondary);
+  max-width: 640px;
+  line-height: 1.65;
+}
+
+.welcome-actions {
+  display: flex;
+  gap: 14px;
+  margin-top: 24px;
+  flex-wrap: wrap;
+}
+
+/* Metrics Summary Grid */
+.metrics-summary-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin-bottom: 36px;
+}
+
+.metric-card {
+  padding: 26px;
+  background-color: #ffffff;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  box-shadow: var(--shadow-sm);
+  transition: all var(--transition-normal);
+}
+
+.metric-card:hover {
+  border-color: var(--color-border-gold);
+  box-shadow: var(--shadow-md);
+  transform: translateY(-3px);
+}
+
+.metric-icon-wrap {
+  width: 54px;
+  height: 54px;
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.metric-icon-wrap.terracotta {
+  background-color: var(--terracotta-soft);
+  color: var(--terracotta);
+  border: 1px solid rgba(184, 102, 72, 0.2);
+}
+
+.metric-icon-wrap.sage {
+  background-color: var(--sage-soft);
+  color: var(--sage);
+  border: 1px solid rgba(67, 89, 74, 0.2);
+}
+
+.metric-icon-wrap.earth {
+  background-color: var(--bronze-muted);
+  color: var(--bronze);
+  border: 1px solid var(--color-border-gold);
+}
+
+.metric-value {
+  font-size: 2.1rem;
+  font-weight: 700;
+  color: var(--color-text);
+  line-height: 1.1;
+  font-family: var(--font-serif);
+}
+
+.metric-label {
+  font-size: 0.88rem;
+  font-weight: 500;
+  color: var(--color-text-secondary);
+  margin-top: 4px;
+}
+
+/* Double column */
+.dashboard-double-col {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 32px;
+}
+
+.dashboard-section-card {
+  padding: 30px;
+  background-color: #ffffff;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+}
+
+.section-card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 22px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid var(--color-border-light);
+}
+
+.card-heading {
+  font-size: 1.35rem;
+  color: var(--color-text);
+  letter-spacing: -0.01em;
+}
+
+.card-subtext {
+  font-size: 0.85rem;
+  color: var(--color-text-secondary);
+  margin-top: 2px;
+}
+
+.card-header-link {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 0.86rem;
+  font-weight: 600;
+  color: var(--bronze);
+  transition: color var(--transition-fast);
+}
+
+.card-header-link:hover {
+  color: var(--bronze-dk);
+  text-decoration: underline;
+}
+
+/* Appointment List */
+.appointment-list, .inquiry-summary-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.appointment-item {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 16px 18px;
+  background-color: var(--color-surface-warm);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--color-border);
+  transition: all var(--transition-fast);
+}
+
+.appointment-item:hover {
+  border-color: var(--color-border-gold);
+  background-color: #ffffff;
+}
+
+.appointment-date-badge {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 8px 14px;
+  background-color: #ffffff;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--color-border);
+  color: var(--bronze);
+  font-size: 0.78rem;
+  font-weight: 700;
+  gap: 4px;
+  flex-shrink: 0;
+}
+
+.appointment-info {
+  flex: 1;
+}
+
+.appointment-title {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--color-text);
+  margin-bottom: 3px;
+}
+
+.appointment-time {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.84rem;
+  color: var(--color-text-secondary);
+}
+
+/* Inquiry items */
+.inquiry-summary-item {
+  padding: 18px;
+  background-color: var(--color-surface-warm);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--color-border);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.inquiry-item-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.inquiry-property-name {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--color-text);
+}
+
+.inquiry-message-text {
+  font-size: 0.92rem;
+  color: var(--color-text);
+  font-style: italic;
+  line-height: 1.5;
+}
+
+.inquiry-reply-preview {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  padding: 10px 14px;
+  background-color: var(--sage-soft);
+  border-radius: var(--radius-sm);
+  font-size: 0.86rem;
+  color: var(--sage);
+  border: 1px solid rgba(67, 89, 74, 0.2);
+}
+
+.inquiry-pending-tag {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.82rem;
+  color: var(--color-text-secondary);
+}
+
+/* Filter Pill Tabs */
+.filter-pill-tabs {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 24px;
+  flex-wrap: wrap;
+}
+
+.pill-tab {
+  padding: 8px 18px;
+  border-radius: var(--radius-full);
+  font-size: 0.86rem;
+  font-weight: 600;
+  color: var(--color-text-secondary);
+  background-color: #ffffff;
+  border: 1px solid var(--color-border);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.pill-tab:hover {
+  color: var(--color-text);
+  border-color: var(--bronze);
+}
+
+.pill-tab.is-active {
+  background: linear-gradient(135deg, var(--bronze) 0%, var(--bronze-dk) 100%);
+  color: #ffffff;
+  border-color: var(--bronze);
+  box-shadow: 0 2px 8px rgba(184, 145, 63, 0.25);
+}
+
+.table-card {
+  padding: 0;
+  overflow: hidden;
+  background-color: #ffffff;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+}
+
+.table-link-title {
+  font-weight: 600;
+  color: var(--bronze);
+  display: inline-flex;
+  align-items: center;
+}
+
+.table-link-title:hover {
+  text-decoration: underline;
+}
+
+/* Profile card */
+.profile-card-container {
+  max-width: 760px;
+}
+
+.profile-card {
+  overflow: hidden;
+  background-color: #ffffff;
+  border-radius: var(--radius-xl);
+  border: 1px solid var(--color-border);
+  box-shadow: var(--shadow-sm);
+}
+
+.profile-banner {
+  height: 140px;
+  background: linear-gradient(135deg, #1b1814 0%, #302a22 100%);
+  position: relative;
+  border-bottom: 2px solid var(--bronze);
+}
+
+.profile-avatar-large {
+  position: absolute;
+  bottom: -44px;
+  left: 40px;
+  width: 88px;
+  height: 88px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--bronze) 0%, var(--bronze-dk) 100%);
+  border: 4px solid #ffffff;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2.4rem;
+  font-weight: 700;
+  box-shadow: var(--shadow-md);
+  font-family: var(--font-serif);
+}
+
+.profile-body {
+  padding: 60px 40px 40px;
+}
+
+.profile-header-meta {
+  margin-bottom: 32px;
+}
+
+.profile-full-name {
+  font-size: 1.9rem;
+  color: var(--color-text);
+  letter-spacing: -0.01em;
+}
+
+.profile-username {
+  font-size: 0.95rem;
+  color: var(--bronze);
+  font-weight: 500;
+}
+
+.profile-details-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  padding-top: 28px;
+  border-top: 1px solid var(--color-border-light);
+}
+
+.profile-field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.field-label {
+  font-size: 0.76rem;
+  font-weight: 700;
+  color: var(--color-text-secondary);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.field-label svg {
+  color: var(--bronze);
+}
+
+.field-value {
+  font-size: 1.05rem;
+  font-weight: 500;
+  color: var(--color-text);
+}
+
+@media (max-width: 900px) {
+  .metrics-summary-grid {
+    grid-template-columns: 1fr;
+  }
+  .dashboard-double-col {
+    grid-template-columns: 1fr;
+  }
+  .profile-details-grid {
+    grid-template-columns: 1fr;
+  }
+}
+

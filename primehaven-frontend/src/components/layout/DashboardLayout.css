@@ -1,0 +1,309 @@
+/* ==========================================================================
+   PRIMEHAVEN REAL ESTATE NETWORK - LUXURY DASHBOARD SUITE
+   Dark Walnut/Obsidian Sidebar, Warm Ivory Workspace & Champagne Gold Accents
+   ========================================================================== */
+
+.dashboard-shell {
+  display: flex;
+  min-height: 100vh;
+  background-color: var(--color-background);
+}
+
+/* ── Persistent Luxury Sidebar ────────────────────────────── */
+.dashboard-sidebar {
+  width: var(--sidebar-width);
+  background-color: #12100e;
+  border-right: 1px solid rgba(184, 145, 63, 0.22);
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 90;
+  transition: transform var(--transition-normal);
+  box-shadow: 4px 0 24px rgba(0, 0, 0, 0.25);
+}
+
+.dashboard-sidebar-header {
+  height: var(--header-height);
+  padding: 0 22px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+.dashboard-sidebar-header .brand-logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  text-decoration: none;
+}
+
+.dashboard-sidebar-header .brand-icon-box {
+  width: 38px;
+  height: 38px;
+  border-radius: 9px;
+  background: linear-gradient(135deg, rgba(184, 145, 63, 0.28), rgba(184, 102, 72, 0.22));
+  border: 1px solid rgba(184, 145, 63, 0.45);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.dashboard-sidebar-header .brand-home-icon {
+  color: var(--bronze-lt);
+}
+
+.dashboard-sidebar-header .brand-title {
+  color: #ffffff;
+  font-size: 1.25rem;
+  font-family: var(--font-serif);
+  letter-spacing: -0.01em;
+}
+
+.dashboard-sidebar-header .brand-subtitle {
+  color: var(--bronze-lt);
+  font-size: 0.65rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+.sidebar-close-btn {
+  display: none;
+  color: rgba(247, 243, 235, 0.6);
+  padding: 6px;
+  border-radius: 4px;
+}
+
+.dashboard-sidebar-nav {
+  flex: 1;
+  padding: 24px 14px;
+  overflow-y: auto;
+}
+
+.sidebar-nav-group {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.sidebar-section-label {
+  font-size: 0.68rem;
+  font-weight: 700;
+  color: var(--bronze);
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  padding: 16px 14px 8px;
+}
+
+.sidebar-link {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 11px 14px;
+  border-radius: var(--radius-sm);
+  color: rgba(247, 243, 235, 0.72);
+  font-size: 0.9rem;
+  font-weight: 500;
+  transition: all var(--transition-fast);
+  border-left: 3px solid transparent;
+}
+
+.sidebar-link svg {
+  color: var(--bronze-lt);
+  flex-shrink: 0;
+  transition: transform var(--transition-fast);
+}
+
+.sidebar-link:hover {
+  background-color: rgba(184, 145, 63, 0.12);
+  color: #ffffff;
+}
+
+.sidebar-link:hover svg {
+  transform: translateX(2px);
+}
+
+.sidebar-link.is-active {
+  background: linear-gradient(90deg, rgba(184, 145, 63, 0.22) 0%, rgba(184, 145, 63, 0.06) 100%);
+  color: #ffffff;
+  font-weight: 600;
+  border-left-color: var(--bronze);
+}
+
+.sidebar-link.is-active svg {
+  color: var(--bronze);
+}
+
+.sidebar-link.public-link {
+  color: rgba(247, 243, 235, 0.55);
+}
+
+.sidebar-divider {
+  height: 1px;
+  background-color: rgba(255, 255, 255, 0.08);
+  margin: 16px 8px;
+}
+
+.dashboard-sidebar-user {
+  padding: 16px 18px;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background-color: #0c0a08;
+}
+
+.user-avatar-circle {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--bronze) 0%, var(--bronze-dk) 100%);
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 0.95rem;
+  flex-shrink: 0;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+  border: 1px solid rgba(184, 145, 63, 0.4);
+}
+
+.user-info-text {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.user-name-label {
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: #ffffff;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.user-email-label {
+  font-size: 0.74rem;
+  color: rgba(247, 243, 235, 0.55);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* ── Main Area ────────────────────────────────────────────── */
+.dashboard-main-wrap {
+  flex: 1;
+  margin-left: var(--sidebar-width);
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.dashboard-top-header {
+  height: var(--header-height);
+  background-color: rgba(255, 255, 255, 0.88);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-bottom: 1px solid var(--color-border);
+  padding: 0 32px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: sticky;
+  top: 0;
+  z-index: 80;
+}
+
+.dashboard-top-left {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.dashboard-menu-btn {
+  display: none;
+  color: var(--color-text);
+  padding: 6px;
+  border-radius: 4px;
+}
+
+.dashboard-header-title {
+  font-size: 1.55rem;
+  color: var(--color-text);
+  letter-spacing: -0.01em;
+}
+
+.dashboard-top-right {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.header-user-badge {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.88rem;
+  font-weight: 500;
+  color: var(--color-text);
+  padding: 7px 14px;
+  background-color: var(--color-surface-warm);
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--color-border);
+}
+
+.header-user-badge svg {
+  color: var(--bronze);
+}
+
+.dashboard-page-content {
+  padding: 36px 32px 80px;
+  flex: 1;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .dashboard-sidebar {
+    transform: translateX(-100%);
+  }
+
+  .dashboard-sidebar.is-open {
+    transform: translateX(0);
+  }
+
+  .dashboard-main-wrap {
+    margin-left: 0;
+  }
+
+  .dashboard-menu-btn, .sidebar-close-btn {
+    display: block;
+  }
+
+  .dashboard-sidebar-overlay {
+    position: fixed;
+    inset: 0;
+    background-color: rgba(14, 12, 10, 0.65);
+    z-index: 85;
+    backdrop-filter: blur(4px);
+  }
+}
+
+@media (max-width: 640px) {
+  .dashboard-top-header {
+    padding: 0 16px;
+  }
+  .dashboard-page-content {
+    padding: 24px 16px 60px;
+  }
+  .header-user-badge {
+    display: none;
+  }
+}
+

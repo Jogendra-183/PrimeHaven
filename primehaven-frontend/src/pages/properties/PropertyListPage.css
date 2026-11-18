@@ -1,0 +1,378 @@
+/* ═══════════════════════════════════════════════════════════════
+   PRIMEHAVEN REAL ESTATE NETWORK - PROPERTY EXPLORATION PAGE
+   Warm Ivory, Obsidian, Travertine & Champagne Gold Theme
+   ═══════════════════════════════════════════════════════════════ */
+
+.property-list-page {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background-color: var(--color-background);
+  position: relative;
+  overflow-x: hidden;
+}
+
+/* Subtle architectural line watermark */
+.page-background-pattern {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 520px;
+  background-image: 
+    radial-gradient(ellipse at 80% 20%, rgba(184, 145, 63, 0.07) 0%, transparent 60%),
+    linear-gradient(180deg, rgba(229, 218, 203, 0.35) 0%, rgba(247, 243, 235, 0) 100%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.page-main-content {
+  padding: calc(var(--header-height, 76px) + 36px) 28px 96px;
+  flex: 1;
+  position: relative;
+  z-index: 1;
+  max-width: var(--max-width);
+  margin: 0 auto;
+  width: 100%;
+}
+
+/* ── 1. Page Header Section ── */
+.page-header {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  margin-bottom: 36px;
+  gap: 28px;
+  flex-wrap: wrap;
+  padding-bottom: 24px;
+  border-bottom: 1px solid var(--color-border-light);
+}
+
+.page-header-content {
+  max-width: 660px;
+}
+
+.header-badge-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 8px;
+  flex-wrap: wrap;
+}
+
+.luxury-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.76rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--bronze);
+}
+
+.eyebrow-icon {
+  color: var(--bronze);
+}
+
+.header-verified-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  background-color: rgba(184, 145, 63, 0.12);
+  color: var(--bronze-dk);
+  font-size: 0.72rem;
+  font-weight: 600;
+  padding: 3px 10px;
+  border-radius: var(--radius-full);
+  border: 1px solid rgba(184, 145, 63, 0.25);
+}
+
+.page-title {
+  font-size: clamp(2.1rem, 4vw, 3rem);
+  color: var(--color-text);
+  margin-top: 6px;
+  letter-spacing: -0.015em;
+  line-height: 1.15;
+}
+
+.page-subtitle-text {
+  font-size: 1.05rem;
+  color: var(--color-text-secondary);
+  margin-top: 10px;
+  line-height: 1.6;
+}
+
+.page-header-controls {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 14px;
+}
+
+.header-catalog-stat {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  padding: 8px 16px;
+  border-radius: var(--radius-md);
+  background-color: #ffffff;
+  border: 1px solid var(--color-border);
+  box-shadow: var(--shadow-xs);
+}
+
+.stat-num {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--bronze);
+}
+
+.stat-label {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--color-text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.sort-control-wrap {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.sort-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 0.84rem;
+  font-weight: 600;
+  color: var(--color-text-secondary);
+  white-space: nowrap;
+}
+
+.sort-label svg {
+  color: var(--bronze);
+}
+
+.sort-select-box {
+  min-width: 210px;
+}
+
+/* ── 2. Backend Connectivity Banner ── */
+.backend-status-banner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 14px 20px;
+  border-radius: var(--radius-md);
+  margin-bottom: 36px;
+  flex-wrap: wrap;
+}
+
+.backend-status-banner.dev-mode {
+  background-color: #fff9f0;
+  border: 1px solid rgba(184, 145, 63, 0.35);
+  box-shadow: 0 2px 10px rgba(184, 145, 63, 0.08);
+}
+
+.backend-status-banner.live-mode {
+  background-color: var(--sage-soft);
+  border: 1px solid rgba(67, 89, 74, 0.3);
+}
+
+.banner-left {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.banner-icon-circle {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background-color: rgba(184, 145, 63, 0.15);
+  color: var(--bronze-dk);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.banner-icon-circle.live {
+  background-color: rgba(67, 89, 74, 0.2);
+  color: var(--sage);
+}
+
+.banner-title {
+  font-size: 0.88rem;
+  color: var(--color-text);
+  display: block;
+}
+
+.banner-desc {
+  font-size: 0.8rem;
+  color: var(--color-text-secondary);
+  margin-top: 2px;
+  line-height: 1.45;
+}
+
+.retry-live-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 8px 16px;
+  border-radius: var(--radius-sm);
+  background-color: #ffffff;
+  border: 1px solid var(--bronze);
+  color: var(--bronze-dk);
+  font-size: 0.8rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  white-space: nowrap;
+}
+
+.retry-live-btn:hover:not(:disabled) {
+  background-color: var(--bronze);
+  color: #ffffff;
+}
+
+.retry-live-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.spin-icon {
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* ── 3. Results Subheading Bar ── */
+.results-subheading-bar {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  margin-bottom: 24px;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.results-heading-left {
+  display: flex;
+  align-items: baseline;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.results-heading {
+  font-size: 1.65rem;
+  color: var(--color-text);
+}
+
+.results-sub-text {
+  font-size: 0.88rem;
+  color: var(--color-text-secondary);
+}
+
+.reset-inline-btn {
+  background: none;
+  border: none;
+  color: var(--bronze);
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  text-decoration: underline;
+  padding: 4px 6px;
+}
+
+.reset-inline-btn:hover {
+  color: var(--bronze-dk);
+}
+
+/* ── 4. Pagination Wrap ── */
+.pagination-wrap {
+  margin-top: 48px;
+  display: flex;
+  justify-content: center;
+}
+
+/* ── 5. Development Disclaimer Box ── */
+.development-disclaimer-box {
+  margin-top: 56px;
+  padding: 18px 24px;
+  border-radius: var(--radius-md);
+  background-color: var(--color-surface-warm);
+  border: 1px solid var(--color-border);
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+.disclaimer-icon {
+  color: var(--bronze);
+  margin-top: 2px;
+  flex-shrink: 0;
+}
+
+.disclaimer-text {
+  font-size: 0.82rem;
+  color: var(--color-text-secondary);
+  line-height: 1.6;
+}
+
+.disclaimer-text strong {
+  color: var(--color-text);
+}
+
+/* ── Responsive ── */
+@media (max-width: 900px) {
+  .page-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+  }
+  .page-header-controls {
+    align-items: flex-start;
+    width: 100%;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+}
+
+@media (max-width: 640px) {
+  .page-main-content {
+    padding: calc(var(--header-height, 76px) + 20px) 16px 60px;
+  }
+  .page-header-controls {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 12px;
+  }
+  .sort-control-wrap {
+    width: 100%;
+    justify-content: space-between;
+  }
+  .sort-select-box {
+    flex: 1;
+    min-width: 0;
+  }
+  .backend-status-banner {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .retry-live-btn {
+    width: 100%;
+    justify-content: center;
+  }
+}

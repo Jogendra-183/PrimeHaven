@@ -1,0 +1,161 @@
+/* ═══════════════════════════════════════════════════════════════
+   PRIMEHAVEN — REAL ARTICULATED DESK LAMP & CINEMATIC ENVIRONMENT
+   ═══════════════════════════════════════════════════════════════ */
+
+.lamp-environment {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  min-height: 100vh;
+  background-color: #12100d;
+  background-image: 
+    radial-gradient(ellipse at 65% 35%, rgba(38, 33, 26, 0.95) 0%, #100e0c 70%),
+    linear-gradient(180deg, rgba(14, 12, 10, 0.4) 0%, rgba(14, 12, 10, 0.92) 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  user-select: none;
+}
+
+/* Background Architectural Luxury Texture */
+.lamp-environment-bg {
+  position: absolute;
+  inset: 0;
+  background-image: url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1400&q=80');
+  background-size: cover;
+  background-position: center;
+  opacity: 0.18;
+  filter: grayscale(85%) contrast(125%);
+  mix-blend-mode: luminosity;
+  pointer-events: none;
+}
+
+/* Floating Cinematic Dust Particles */
+.lamp-dust-container {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: 2;
+}
+
+.dust-particle {
+  position: absolute;
+  width: 3.5px;
+  height: 3.5px;
+  border-radius: 50%;
+  background-color: rgba(255, 235, 180, 0.65);
+  box-shadow: 0 0 6px rgba(255, 215, 120, 0.85);
+  animation: floatDust 12s infinite ease-in-out;
+}
+
+.dust-particle.d1 { top: 30%; left: 32%; animation-duration: 9s; animation-delay: 0s; width: 3px; height: 3px; }
+.dust-particle.d2 { top: 44%; left: 24%; animation-duration: 14s; animation-delay: 2s; width: 4px; height: 4px; }
+.dust-particle.d3 { top: 58%; left: 40%; animation-duration: 11s; animation-delay: 4s; width: 2.5px; height: 2.5px; }
+.dust-particle.d4 { top: 38%; left: 48%; animation-duration: 16s; animation-delay: 1s; width: 3.5px; height: 3.5px; }
+.dust-particle.d5 { top: 65%; left: 28%; animation-duration: 13s; animation-delay: 3s; width: 3px; height: 3px; }
+
+@keyframes floatDust {
+  0% { transform: translateY(0px) translateX(0px); opacity: 0.15; }
+  50% { transform: translateY(-35px) translateX(18px); opacity: 0.9; }
+  100% { transform: translateY(-70px) translateX(-12px); opacity: 0; }
+}
+
+/* Floor Light Pool on Tabletop / Ground */
+.lamp-floor-pool {
+  position: absolute;
+  bottom: 25px;
+  width: 520px;
+  height: 120px;
+  border-radius: 50%;
+  background: radial-gradient(
+    ellipse at 50% 50%,
+    rgba(255, 230, 160, 0.5) 0%,
+    rgba(184, 145, 63, 0.22) 40%,
+    transparent 75%
+  );
+  filter: blur(28px);
+  pointer-events: none;
+  z-index: 1;
+  transition: opacity 0.4s ease, left 0.5s ease;
+}
+
+/* Master Lamp Container */
+.lamp-character-wrapper {
+  position: relative;
+  z-index: 4;
+  width: 100%;
+  max-width: 660px; /* Large, commanding presence occupying 50-60% of right side */
+  height: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: -50px; /* Allows arms and shade to peek across the card seam */
+}
+
+.lamp-svg {
+  width: 100%;
+  height: auto;
+  overflow: visible;
+  filter: drop-shadow(0 12px 24px rgba(0, 0, 0, 0.6));
+}
+
+/* Lamp Environment Bottom Quote */
+.lamp-environment-footer {
+  position: absolute;
+  bottom: 32px;
+  left: 44px;
+  right: 44px;
+  z-index: 6;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  pointer-events: none;
+}
+
+.lamp-footer-badge {
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--bronze-lt);
+}
+
+.lamp-footer-quote {
+  font-size: 0.95rem;
+  color: rgba(247, 243, 235, 0.68);
+  line-height: 1.5;
+  max-width: 440px;
+}
+
+/* ── Responsive adjustments ── */
+@media (max-width: 1200px) {
+  .lamp-character-wrapper {
+    max-width: 540px;
+    margin-left: -20px;
+  }
+}
+
+@media (max-width: 900px) {
+  .lamp-environment {
+    min-height: 380px;
+    padding: 20px;
+  }
+  .lamp-character-wrapper {
+    max-width: 420px;
+    margin-left: 0;
+  }
+  .lamp-environment-footer {
+    display: none; /* Hide bottom quote on mobile/tablet to avoid overlapping */
+  }
+}
+
+@media (max-width: 600px) {
+  .lamp-environment {
+    min-height: 300px;
+  }
+  .lamp-character-wrapper {
+    max-width: 320px;
+  }
+}

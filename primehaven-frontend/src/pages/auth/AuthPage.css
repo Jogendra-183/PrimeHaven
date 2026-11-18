@@ -1,0 +1,754 @@
+/* ==========================================================================
+   PRIMEHAVEN REAL ESTATE NETWORK - AUTHENTICATION SUITE
+   Warm Ivory, Obsidian & Champagne Gold Luxury Aesthetic
+   Premium Interactive Animation Suite with Articulated Desk Lamp Character
+   ========================================================================== */
+
+.auth-page {
+  min-height: 100vh;
+  display: flex;
+  background-color: #f7f3eb;
+  background-image: 
+    radial-gradient(rgba(180, 160, 130, 0.08) 1px, transparent 1px),
+    linear-gradient(135deg, #fbf8f2 0%, #f4eee2 100%);
+  background-size: 24px 24px, 100% 100%;
+  position: relative;
+  overflow-x: hidden;
+}
+
+.auth-split-container {
+  display: grid;
+  grid-template-columns: 48% 52%;
+  width: 100%;
+  min-height: 100vh;
+  position: relative;
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   LEFT FORM COLUMN — Warm Ivory Architectural Space with Depth
+   ═══════════════════════════════════════════════════════════════════════════ */
+.auth-form-column {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 64px 44px;
+  background: 
+    radial-gradient(circle at 85% 32%, rgba(255, 235, 175, 0.32) 0%, rgba(245, 235, 220, 0.12) 50%, transparent 80%),
+    linear-gradient(135deg, #f7f3eb 0%, #ede5d7 100%);
+  position: relative;
+  z-index: 10;
+  overflow: visible; /* Allows lamp arm to extend seamlessly into right scene */
+  border-right: 1px solid rgba(212, 163, 75, 0.22);
+  box-shadow: 14px 0 38px rgba(20, 16, 12, 0.08);
+}
+
+/* Subtle Foreground Botanical Silhouettes for Cinematic Depth */
+.auth-ambient-foliage-top {
+  position: absolute;
+  top: -40px;
+  left: -50px;
+  width: 220px;
+  height: 240px;
+  background: radial-gradient(
+    ellipse at 25% 25%,
+    rgba(40, 48, 30, 0.14) 0%,
+    rgba(50, 60, 38, 0.08) 45%,
+    transparent 75%
+  );
+  filter: blur(28px);
+  pointer-events: none;
+  z-index: 20;
+}
+
+.auth-ambient-foliage-bottom {
+  position: absolute;
+  bottom: -40px;
+  left: -30px;
+  width: 280px;
+  height: 300px;
+  background: radial-gradient(
+    ellipse at 20% 80%,
+    rgba(32, 40, 24, 0.16) 0%,
+    rgba(45, 55, 34, 0.09) 50%,
+    transparent 75%
+  );
+  filter: blur(34px);
+  pointer-events: none;
+  z-index: 20;
+}
+
+/* Faint Radial Light Gradient on Wall Behind Lamp */
+.auth-wall-lamp-glow {
+  position: absolute;
+  top: 80px;
+  right: -60px;
+  width: 520px;
+  height: 520px;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle,
+    rgba(255, 235, 165, 0.28) 0%,
+    rgba(245, 215, 130, 0.12) 40%,
+    transparent 70%
+  );
+  filter: blur(48px);
+  pointer-events: none;
+  z-index: 2;
+  transition: opacity 0.55s ease, transform 0.55s ease;
+  opacity: 0.75;
+}
+
+.auth-wall-lamp-glow.focus-email,
+.auth-wall-lamp-glow.focus-password {
+  opacity: 0.95;
+  transform: scale(1.08);
+}
+
+/* ─── Card Stage ─────────────────────────────────────────────────────────── */
+.auth-card-stage {
+  position: relative;
+  width: 100%;
+  max-width: 440px;
+  display: flex;
+  justify-content: center;
+}
+
+/* ─── LAYER 1: Lamp Layer (Anchored to card, emerges to the right) ──────── */
+.auth-lamp-behind {
+  position: absolute;
+  top: -45px;
+  left: 0;
+  width: 680px;
+  height: 620px;
+  z-index: 4; /* Sits behind the white card (z-index 10) */
+  pointer-events: none;
+  overflow: visible;
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   LAYER 2: LOGIN CARD & KEYFRAME ANIMATIONS
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+/* Page Load Card Entrance: Gentle Fade-In and Upward Glide */
+@keyframes cardEntrance {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Card Floating Effect: 2-3px subtle vertical motion */
+@keyframes cardFloat {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-2.5px);
+  }
+}
+
+/* Gold Border Moving Shimmer Highlight */
+@keyframes goldShimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+.auth-form-card {
+  width: 100%;
+  max-width: 440px;
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+  padding: 42px 38px;
+  border-radius: 22px;
+  border: 1px solid rgba(212, 163, 75, 0.32);
+  box-shadow: 
+    0 16px 42px rgba(35, 28, 20, 0.09),
+    0 2px 6px rgba(35, 28, 20, 0.04),
+    14px -4px 38px -6px rgba(255, 215, 130, 0.38);
+  position: relative;
+  z-index: 10; /* In front of lamp base and struts */
+  animation: 
+    cardEntrance 0.75s cubic-bezier(0.16, 1, 0.3, 1) forwards,
+    cardFloat 7s ease-in-out infinite 0.75s;
+  transition: background 0.55s ease, box-shadow 0.55s ease, border-color 0.55s ease;
+}
+
+/* Dynamic surface lighting wash based on lamp direction */
+.auth-form-card.focus-email {
+  background: 
+    radial-gradient(ellipse at 100% 28%, rgba(255, 235, 165, 0.45) 0%, rgba(255, 215, 120, 0.18) 32%, rgba(255, 245, 220, 0.04) 55%, #ffffff 78%) !important;
+}
+
+.auth-form-card.focus-password {
+  background: 
+    radial-gradient(ellipse at 100% 48%, rgba(255, 235, 165, 0.45) 0%, rgba(255, 215, 120, 0.18) 32%, rgba(255, 245, 220, 0.04) 55%, #ffffff 78%) !important;
+}
+
+.auth-form-card.focus-none {
+  background: 
+    radial-gradient(ellipse at 100% 20%, rgba(255, 238, 175, 0.35) 0%, rgba(255, 222, 135, 0.15) 30%, rgba(255, 245, 220, 0.03) 55%, #ffffff 75%) !important;
+}
+
+/* Champagne gold accent line with animated shimmer along top edge */
+.auth-form-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3.5px;
+  background: linear-gradient(
+    90deg,
+    #b8863b 0%,
+    #dfad51 25%,
+    #fff2cf 50%,
+    #dfad51 75%,
+    #b8863b 100%
+  );
+  background-size: 200% 100%;
+  animation: goldShimmer 7s linear infinite;
+  border-radius: 22px 22px 0 0;
+  z-index: 2;
+}
+
+/* Soft golden specular edge rim on top & right edge where lamp light strikes */
+.auth-form-card::after {
+  content: '';
+  position: absolute;
+  top: -1px;
+  right: -1px;
+  width: 150px;
+  height: 170px;
+  border-top: 2.5px solid rgba(255, 235, 165, 0.95);
+  border-right: 2.5px solid rgba(212, 163, 75, 0.8);
+  border-top-right-radius: 22px;
+  pointer-events: none;
+  filter: drop-shadow(0 0 10px rgba(255, 220, 130, 0.6));
+  z-index: 3;
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   LAYER 3: DYNAMIC SPOTLIGHT BEAM OVERLAY (On top of card, z-index: 15)
+   ═══════════════════════════════════════════════════════════════════════════ */
+.auth-card-light-beam {
+  position: absolute;
+  top: -45px;
+  left: 0;
+  width: 680px;
+  height: 620px;
+  z-index: 15;
+  pointer-events: none;
+  overflow: visible;
+}
+
+.auth-beam-svg {
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+  pointer-events: none;
+}
+
+/* Beam Groups Smooth Cross-Fade Transitions */
+.beam-group {
+  transition: opacity 0.55s cubic-bezier(0.4, 0, 0.2, 1), transform 0.55s cubic-bezier(0.4, 0, 0.2, 1);
+  opacity: 0;
+  transform-origin: 462px 130px;
+  pointer-events: none;
+}
+
+.auth-card-light-beam.focus-email .beam-group-email {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.auth-card-light-beam.focus-password .beam-group-password {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.auth-card-light-beam.focus-none .beam-group-idle {
+  opacity: 0.85;
+  transform: scale(1);
+}
+
+/* Subtle, Sparse Dust Particles Drifting in Beam */
+@keyframes dustFloat {
+  0% {
+    transform: translateY(0px) translateX(0px);
+    opacity: 0.18;
+  }
+  50% {
+    transform: translateY(-16px) translateX(8px);
+    opacity: 0.48;
+  }
+  100% {
+    transform: translateY(-32px) translateX(16px);
+    opacity: 0.15;
+  }
+}
+
+.beam-dust-particles {
+  pointer-events: none;
+}
+
+.dust-speck {
+  fill: #fffbe8;
+  opacity: 0.35;
+  filter: drop-shadow(0 0 4px rgba(255, 235, 170, 0.7));
+  animation: dustFloat 8s ease-in-out infinite;
+}
+
+.speck-1 { animation-delay: 0s; animation-duration: 7.5s; }
+.speck-2 { animation-delay: 2s; animation-duration: 9s; }
+.speck-3 { animation-delay: 4.5s; animation-duration: 6.5s; }
+.speck-4 { animation-delay: 1.2s; animation-duration: 8s; }
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   DYNAMIC FOCUS & INPUT EXPRESSIONS
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+/* Smooth transitions on card elements */
+.auth-header-text,
+.auth-brand-logo,
+.auth-field-block,
+.auth-form-submit,
+.auth-footer-prompt {
+  transition: opacity 0.5s cubic-bezier(0.4, 0, 0.2, 1),
+              filter 0.5s cubic-bezier(0.4, 0, 0.2, 1),
+              transform 0.4s ease;
+}
+
+/* Base input control styling */
+.auth-field-block .input-control {
+  border-radius: 12px !important;
+  transition: background-color 0.4s ease, border-color 0.4s ease, box-shadow 0.4s ease, color 0.4s ease, transform 0.35s ease !important;
+}
+
+/* ─── WHEN USERNAME / EMAIL IS FOCUSED ──────────────────────────────────── */
+.auth-form-card.focus-email .auth-field-email {
+  opacity: 1 !important;
+  transform: scale(1.015);
+  z-index: 5;
+}
+
+.auth-form-card.focus-email .auth-field-email .input-control {
+  background-color: #fffefb !important;
+  border-color: #f5c452 !important;
+  border-width: 2px !important;
+  box-shadow: 
+    0 0 0 3px #ffe285,
+    0 0 20px 6px rgba(255, 205, 80, 0.65),
+    0 0 40px 12px rgba(255, 185, 50, 0.3) !important;
+  color: #1a1612 !important;
+}
+
+/* Animate User icon with tiny upward movement on focus */
+.auth-form-card.focus-email .auth-field-email .input-prefix-icon {
+  transform: translateY(-2px);
+  color: #a87935 !important;
+  transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1), color 0.3s ease;
+}
+
+.auth-form-card.focus-email .auth-field-email .input-label {
+  color: #a87935 !important;
+}
+
+/* Dim inactive password field */
+.auth-form-card.focus-email .auth-field-password {
+  opacity: 0.54 !important;
+  filter: saturate(0.85);
+}
+
+.auth-form-card.focus-email .auth-field-password .input-control {
+  background-color: rgba(230, 224, 214, 0.5) !important;
+  border-color: rgba(200, 192, 180, 0.45) !important;
+}
+
+.auth-form-card.focus-email .auth-field-password .input-control::placeholder {
+  color: #756a5c !important;
+}
+
+.auth-form-card.focus-email .auth-form-submit {
+  opacity: 0.82;
+}
+
+.auth-form-card.focus-email .auth-header-text {
+  opacity: 0.90;
+}
+
+.auth-form-card.focus-email .auth-footer-prompt {
+  opacity: 0.78;
+}
+
+/* ─── WHEN PASSWORD IS FOCUSED ─────────────────────────────────────────── */
+.auth-form-card.focus-password .auth-field-password {
+  opacity: 1 !important;
+  transform: scale(1.015);
+  z-index: 5;
+}
+
+.auth-form-card.focus-password .auth-field-password .input-control {
+  background-color: #fffefb !important;
+  border-color: #f5c452 !important;
+  border-width: 2px !important;
+  box-shadow: 
+    0 0 0 3px #ffe285,
+    0 0 20px 6px rgba(255, 205, 80, 0.65),
+    0 0 40px 12px rgba(255, 185, 50, 0.3) !important;
+  color: #1a1612 !important;
+}
+
+.auth-form-card.focus-password .auth-field-password .input-label {
+  color: #a87935 !important;
+}
+
+/* Dim inactive email field */
+.auth-form-card.focus-password .auth-field-email {
+  opacity: 0.54 !important;
+  filter: saturate(0.85);
+}
+
+.auth-form-card.focus-password .auth-field-email .input-control {
+  background-color: rgba(230, 224, 214, 0.5) !important;
+  border-color: rgba(200, 192, 180, 0.45) !important;
+}
+
+.auth-form-card.focus-password .auth-field-email .input-control::placeholder {
+  color: #756a5c !important;
+}
+
+.auth-form-card.focus-password .auth-form-submit {
+  opacity: 0.82;
+}
+
+.auth-form-card.focus-password .auth-header-text {
+  opacity: 0.90;
+}
+
+.auth-form-card.focus-password .auth-footer-prompt {
+  opacity: 0.78;
+}
+
+/* ─── WHEN NEITHER FIELD IS FOCUSED (IDLE STATE) ────────────────────────── */
+.auth-form-card.focus-none .auth-header-text,
+.auth-form-card.focus-none .auth-brand-logo,
+.auth-form-card.focus-none .auth-field-block,
+.auth-form-card.focus-none .auth-form-submit,
+.auth-form-card.focus-none .auth-footer-prompt {
+  opacity: 1;
+  filter: none;
+  transform: none;
+}
+
+/* ─── Brand Logo & Staggered Reveal ─────────────────────────────────────── */
+@keyframes logoEntrance {
+  0% {
+    opacity: 0;
+    transform: scale(0.92) translateY(6px);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+.auth-brand-logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  text-decoration: none;
+  margin-bottom: 2px;
+  animation: logoEntrance 0.7s cubic-bezier(0.16, 1, 0.3, 1) 0.15s backwards;
+}
+
+.auth-brand-logo .brand-icon-box {
+  width: 42px;
+  height: 42px;
+  border-radius: 11px;
+  background: linear-gradient(135deg, rgba(184, 145, 63, 0.22), rgba(184, 102, 72, 0.16));
+  border: 1px solid rgba(184, 145, 63, 0.38);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.auth-brand-logo:hover .brand-icon-box {
+  transform: scale(1.05);
+  box-shadow: 0 4px 12px rgba(184, 145, 63, 0.25);
+}
+
+.auth-brand-logo .brand-home-icon {
+  color: #a87935;
+}
+
+.auth-brand-logo .brand-title {
+  font-size: 1.4rem;
+  color: #241e17;
+  font-family: var(--font-serif);
+}
+
+.auth-brand-logo .brand-subtitle {
+  font-size: 0.68rem;
+  color: #a87935;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+/* ─── Text & Staggered Heading Reveal ───────────────────────────────────── */
+@keyframes textEntrance {
+  0% {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.auth-header-text {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.auth-title {
+  font-size: 2.05rem;
+  color: #241e17;
+  letter-spacing: -0.015em;
+  line-height: 1.2;
+  animation: textEntrance 0.7s cubic-bezier(0.16, 1, 0.3, 1) 0.25s backwards;
+}
+
+.auth-subtitle {
+  font-size: 0.94rem;
+  color: #6c6358;
+  line-height: 1.6;
+  animation: textEntrance 0.7s cubic-bezier(0.16, 1, 0.3, 1) 0.35s backwards;
+}
+
+.auth-form-flow {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* ─── Sign In CTA Button with Sweep & Press-down ────────────────────────── */
+.auth-form-submit button {
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(135deg, #a87935 0%, #8c6023 100%) !important;
+  box-shadow: 0 4px 14px rgba(140, 96, 35, 0.25) !important;
+  color: #ffffff !important;
+  font-weight: 600 !important;
+  border-radius: 12px !important;
+  transition: transform 0.25s ease, box-shadow 0.25s ease, background 0.3s ease !important;
+}
+
+/* Smooth light sweep highlight across the button on hover */
+.auth-form-submit button::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -130%;
+  width: 90%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0.38) 50%,
+    transparent 100%
+  );
+  transform: skewX(-24deg);
+  transition: left 0.75s ease;
+  pointer-events: none;
+}
+
+.auth-form-submit button:hover:not(:disabled)::after {
+  left: 140%;
+}
+
+/* Smooth hover lift of 2-3px */
+.auth-form-submit button:hover:not(:disabled) {
+  background: linear-gradient(135deg, #b8863b 0%, #9a6d2b 100%) !important;
+  box-shadow: 0 7px 20px rgba(140, 96, 35, 0.35) !important;
+  transform: translateY(-2.5px) !important;
+}
+
+/* Gentle press-down effect on click */
+.auth-form-submit button:active:not(:disabled) {
+  transform: translateY(1px) !important;
+  box-shadow: 0 2px 8px rgba(140, 96, 35, 0.28) !important;
+}
+
+/* ─── Footer & Create Account Link with Expanding Underline ─────────────── */
+.auth-footer-prompt {
+  text-align: center;
+  font-size: 0.92rem;
+  color: #6c6358;
+  margin-top: 4px;
+}
+
+.auth-inline-link {
+  position: relative;
+  display: inline-block;
+  color: #a87935;
+  font-weight: 600;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.auth-inline-link::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 100%;
+  height: 1.8px;
+  background: linear-gradient(90deg, #b8863b, #f7d885);
+  transform: scaleX(0);
+  transform-origin: left center;
+  transition: transform 0.28s cubic-bezier(0.25, 1, 0.5, 1);
+  border-radius: 1px;
+}
+
+.auth-inline-link:hover {
+  color: #8c6023;
+}
+
+.auth-inline-link:hover::after {
+  transform: scaleX(1);
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   RIGHT PANEL — Luxury Sunset Interior Photograph
+   ═══════════════════════════════════════════════════════════════════════════ */
+.auth-visual-column {
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 5;
+  background-color: #1a1612;
+}
+
+/* The luxury interior photograph */
+.auth-visual-photo {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center left;
+  z-index: 1;
+}
+
+/* Dark atmospheric overlay ensuring lamp contrast */
+.auth-visual-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    90deg,
+    rgba(20, 16, 12, 0.32) 0%,
+    rgba(20, 16, 12, 0.08) 35%,
+    rgba(20, 16, 12, 0.22) 100%
+  );
+  z-index: 2;
+  pointer-events: none;
+}
+
+/* Warm ambient light spill into the room from the desk lamp */
+.auth-visual-ambient-light {
+  position: absolute;
+  left: -40px;
+  top: 15%;
+  width: 440px;
+  height: 440px;
+  background: radial-gradient(
+    circle at 20% 35%,
+    rgba(255, 225, 140, 0.22) 0%,
+    rgba(212, 163, 75, 0.10) 40%,
+    transparent 70%
+  );
+  filter: blur(40px);
+  z-index: 3;
+  pointer-events: none;
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   RESPONSIVE
+   ═══════════════════════════════════════════════════════════════════════════ */
+@media (max-width: 1180px) {
+  .auth-split-container {
+    grid-template-columns: 50% 50%;
+  }
+  .auth-form-column {
+    padding: 48px 32px;
+  }
+}
+
+@media (max-width: 900px) {
+  .auth-split-container {
+    grid-template-columns: 1fr;
+  }
+  .auth-visual-column {
+    height: 320px;
+    min-height: 320px;
+    order: -1;
+  }
+  .auth-form-column {
+    padding: 36px 20px 60px;
+    box-shadow: none;
+    overflow: hidden;
+  }
+  .auth-form-card {
+    padding: 32px 24px;
+    animation: cardEntrance 0.75s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  }
+  .auth-lamp-behind,
+  .auth-card-light-beam,
+  .auth-wall-lamp-glow {
+    display: none;
+  }
+}
+
+@media (max-width: 640px) {
+  .auth-visual-column {
+    height: 260px;
+    min-height: 260px;
+  }
+  .auth-form-card {
+    padding: 28px 20px;
+  }
+  .auth-title {
+    font-size: 1.8rem;
+  }
+}
+
+/* ─── Reduced Motion ────────────────────────────────────────────────────── */
+@media (prefers-reduced-motion: reduce) {
+  .auth-form-card,
+  .auth-brand-logo,
+  .auth-title,
+  .auth-subtitle,
+  .beam-group,
+  .dust-speck,
+  .auth-inline-link::after,
+  .auth-form-submit button::after {
+    transition: none !important;
+    animation: none !important;
+    transform: none !important;
+  }
+}
